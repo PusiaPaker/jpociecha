@@ -3,3 +3,17 @@
     src: url('./../assets/fonts/GothBallCrap.ttf'); 
 }
 
+@font-face {
+    font-family: 'NerdSymbols';
+    src: url('./../assets/fonts/SymbolsNerdFont-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'NerdSymbolsMono';
+    src: url('./../assets/fonts/SymbolsNerdFontMono-Regular.ttf');
+}
+
+.nf {
+  font-family: "NerdSymbols";
+  padding: 0.4rem;
+}

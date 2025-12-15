@@ -1,13 +1,179 @@
+:root {
+  --bg: #0b0a0d;
+  --ink: #e9e3ef;
+  --muted: rgba(233, 227, 239, 0.72);
+
+  --wine: #2b0f1f;
+  --rose: #b07aa6;
+  --bone: #f4ecd8;
+
+  --card: rgba(255, 255, 255, 0.06);
+  --card2: rgba(255, 255, 255, 0.10);
+  --stroke: rgba(255, 255, 255, 0.14);
+
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html {
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 700px at 20% 10%, rgba(176, 122, 166, 0.18), transparent 60%),
+    radial-gradient(900px 600px at 85% 25%, rgba(244, 236, 216, 0.08), transparent 55%),
+    linear-gradient(180deg, #07060a, var(--bg));
+  background-repeat: repeat;
+}
+
 body {
-    background: #ff00ff;
+  min-height: 100%;
+  background: transparent;
+  color: white;
 }
 
-h1 {
-  font-family: 'GothBallCrap', Arial, sans-serif;
-
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.09;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 3px);
+  mix-blend-mode: overlay;
+  z-index: 0;
 }
 
-.nav-name {
-    display: flex;
-    content-alight: center;
+.bg-vignette {
+  position: fixed;
+  inset: -10%;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 35%, transparent 0 40%, rgba(0,0,0,0.65) 75%, rgba(0,0,0,0.88) 100%);
+  z-index: 0;
 }
+
+main.container {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(10, 9, 13, 0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.gothic-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+}
+
+.brand-name {
+  font-family: "GothBallCrap", serif;
+  font-size: 22px;
+  letter-spacing: 0.6px;
+  padding-left: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+  background: rgba(255,255,255,0.06);
+}
+
+.section {
+  padding: 34px 0;
+}
+
+.section-last {
+  padding-bottom: 70px;
+}
+
+.section-head {
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: "GothBallCrap", serif;
+  font-size: 34px;
+  margin: 0;
+  letter-spacing: 0.8px;
+}
+
+.section-sub {
+  margin: 8px 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.tags span {
+  font-size: 12px;
+  color: rgba(244, 236, 216, 0.82);
+  border: 1px solid rgba(244, 236, 216, 0.18);
+  background: rgba(244, 236, 216, 0.06);
+  padding: 5px 9px;
+  border-radius: 999px;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 18px 0;
+  background: rgba(10, 9, 13, 0.5);
+}
+
+.footer-inner {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: rgba(233, 227, 239, 0.65);
+}
+
+.footer-sep { opacity: 0.55; }
+
+@media (max-width: 576px) {
+  .nav-links { gap: 10px; }
+  .brand-name { font-size: 18px; }
+}
+

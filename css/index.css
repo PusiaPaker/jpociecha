@@ -1,0 +1,285 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 28px;
+  padding: 58px 0 28px;
+  align-items: center;
+}
+
+.kicker {
+  color: rgba(244, 236, 216, 0.8);
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-family: "GothBallCrap", serif;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.98;
+  margin: 0;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
+.title-sub {
+  display: block;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: rgba(233, 227, 239, 0.72);
+  margin-top: 10px;
+}
+
+.hero-blurb {
+  margin-top: 16px;
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.btn-goth,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+
+.btn-goth {
+  background: linear-gradient(135deg, rgba(176,122,166,0.25), rgba(43,15,31,0.35));
+  color: var(--ink);
+}
+
+.btn-goth:hover {
+  background: linear-gradient(135deg, rgba(176,122,166,0.35), rgba(43,15,31,0.45));
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  color: var(--ink);
+  background: rgba(255,255,255,0.08);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 16px;
+  color: rgba(233, 227, 239, 0.65);
+  font-size: 13px;
+}
+
+.meta-pill {
+  padding: 6px 10px;
+  border: 1px dashed rgba(255,255,255,0.18);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+}
+
+.meta-sep { opacity: 0.55; }
+
+.portrait-frame {
+  position: relative;
+  border-radius: var(--radius);
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: var(--shadow);
+}
+
+.portrait-img {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 6px);
+  filter: contrast(1.05) saturate(0.95);
+}
+
+.frame-ornament {
+  position: absolute;
+  inset: -10px;
+  border-radius: calc(var(--radius) + 8px);
+  border: 1px solid rgba(176,122,166,0.22);
+  pointer-events: none;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   gap: 1rem;
+}
+
+.work-grid .work-card:nth-child(n + 7) { display: none; }
+
+@media (max-width: 700px) {
+  .work-grid .work-card:nth-child(n + 4) { display: none; }
+}
+
+.work-card {
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.10);
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+}
+
+.work-open {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+.work-thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;  
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.06) saturate(0.92);
+}
+
+.work-body {
+  padding: 14px 14px 16px;
+}
+
+.work-body h3 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 992px) {
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .work-grid { grid-template-columns: 1fr; }
+  .work-thumb img { aspect-ratio: 16 / 9; } 
+}
+
+.work-more {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-box {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.about-box > div {
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 16px;
+}
+
+.about-title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.about-left p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.quote-card {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 22px;
+  background: linear-gradient(135deg, rgba(43,15,31,0.32), rgba(255,255,255,0.04));
+}
+
+.quote {
+  font-family: "GothBallCrap", serif;
+  font-size: 28px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.quote-attrib {
+  margin: 10px 0 0;
+  color: rgba(233, 227, 239, 0.65);
+}
+
+.contact-box {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: rgba(244,236,216,0.85);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.contact-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--ink);
+}
+
+@media (max-width: 992px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { order: -1; }
+  .work-card { grid-column: span 6; }
+  .about-box { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .work-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .work-thumb img {
+    height: 160px;
+  }
+}
+

@@ -1,0 +1,121 @@
+.img-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 160ms ease, visibility 160ms ease;
+}
+
+.img-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.img-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.img-modal__content {
+  position: relative;
+  width: min(920px, 92vw);
+  max-height: 88vh;
+  margin: 6vh auto;
+
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 18, 22, 0.92),
+    rgba(10, 10, 10, 0.92)
+  );
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(176, 122, 166, 0.15);
+
+  padding: 12px 12px 10px;
+
+  transform: translateY(10px) scale(0.985);
+  opacity: 0;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.img-modal.is-open .img-modal__content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+#imgModalImg {
+  width: 100%;
+  height: auto;
+  max-height: 76vh;
+  object-fit: contain;
+  display: block;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+#imgModalCap {
+  margin: 10px 6px 2px;
+  color: rgba(244, 236, 216, 0.82);
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+.img-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 1);
+  color: rgba(244, 236, 216, 0.9);
+
+  display: grid;
+  place-items: center;
+
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: background 120ms ease, transform 120ms ease, border-color 120ms ease;
+}
+
+.img-modal__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(176, 122, 166, 0.35);
+  transform: scale(1.03);
+}
+
+.img-modal__close:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 576px) {
+  .img-modal__content {
+    width: 94vw;
+    margin: 5vh auto;
+    padding: 10px;
+  }
+
+  #imgModalImg {
+    max-height: 70vh;
+  }
+}
+
