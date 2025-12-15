@@ -1,0 +1,13 @@
+body {
+    background: #ff00ff;
+}
+
+h1 {
+  font-family: 'GothBallCrap', Arial, sans-serif;
+
+}
+
+.nav-name {
+    display: flex;
+    content-alight: center;
+}
